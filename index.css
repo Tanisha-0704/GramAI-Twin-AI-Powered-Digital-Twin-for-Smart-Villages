@@ -1,0 +1,275 @@
+@import "tailwindcss";
+
+:root {
+  --forest-900: #0f172a;
+  --forest-800: #123524;
+  --forest-700: #1d4d36;
+  --forest-600: #226b45;
+  --forest-500: #2d8b5f;
+  --forest-400: #5ab47b;
+  --emerald-100: #ecfdf5;
+  --emerald-200: #d1fae5;
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-500: #64748b;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --amber-100: #fef3c7;
+  --amber-700: #b45309;
+  --red-100: #fee2e2;
+  --red-600: #dc2626;
+  --green-100: #dcfce7;
+  --green-700: #15803d;
+  --ring: rgba(34, 107, 69, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(45, 139, 95, 0.08), transparent 30%),
+    linear-gradient(180deg, #f6faf7 0%, #eef4ef 100%);
+  color: var(--slate-800);
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button { cursor: pointer; }
+
+#root {
+  min-height: 100vh;
+}
+
+.gramai-surface {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.gramai-page-shell {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fafffb 0%, #edf5f0 100%);
+}
+
+.gramai-main-panel {
+  min-height: 100vh;
+}
+
+.gramai-header-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.gramai-page-title {
+  font-size: clamp(1.4rem, 2vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--slate-800);
+  margin: 0;
+}
+
+.gramai-page-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--slate-500);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.gramai-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gramai-ghost-button {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: white;
+  color: var(--slate-700);
+  border-radius: 0.8rem;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.gramai-ghost-button:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.gramai-primary-button {
+  border: none;
+  background: linear-gradient(135deg, var(--forest-600), var(--forest-500));
+  color: white;
+  border-radius: 0.9rem;
+  padding: 0.8rem 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(34, 107, 69, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gramai-primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px rgba(34, 107, 69, 0.24);
+}
+
+.gramai-user-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.gramai-user-avatar {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--forest-600), var(--forest-400));
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.gramai-card {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.gramai-stat {
+  padding: 1.2rem 1.3rem;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,250,252,0.9));
+}
+
+.gramai-stat .label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 700;
+}
+
+.gramai-stat .value {
+  font-size: clamp(1.5rem, 2vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  margin-top: 0.7rem;
+  color: var(--slate-800);
+}
+
+.gramai-stat .meta {
+  margin-top: 0.5rem;
+  color: var(--slate-500);
+  font-size: 0.8rem;
+}
+
+.gramai-section-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gramai-section-title h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--slate-800);
+}
+
+.gramai-section-title p {
+  margin: 0.3rem 0 0;
+  color: var(--slate-500);
+  font-size: 0.85rem;
+}
+
+.gramai-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: rgba(34, 107, 69, 0.08);
+  color: var(--forest-700);
+}
+
+.gramai-village-pin {
+  border: 0;
+  background: transparent;
+}
+
+.gramai-village-pin span {
+  display: block;
+  width: var(--pin-size);
+  height: var(--pin-size);
+  margin: 2px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: var(--pin-color);
+  box-shadow: 0 1px 6px rgba(15, 23, 42, 0.55);
+}
+
+.gramai-grievance-pin {
+  border: 0;
+  background: transparent;
+}
+
+.gramai-grievance-pin span {
+  display: grid;
+  width: var(--grievance-size);
+  height: var(--grievance-size);
+  place-items: center;
+  margin: 2px;
+  border: 3px solid var(--grievance-border);
+  border-radius: 50%;
+  background: var(--grievance-bg);
+  color: white;
+  font-size: 0.62rem;
+  font-weight: 800;
+  box-shadow: 0 1px 6px rgba(15, 23, 42, 0.55);
+}
+
+@media (max-width: 768px) {
+  .gramai-topbar-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .gramai-header-shell {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+}
